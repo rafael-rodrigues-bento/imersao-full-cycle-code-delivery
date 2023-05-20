@@ -2,6 +2,12 @@
 
 A aplicação consiste em um website de entregas que exibe o rastreamento em tempo real.
 
+Para evitar perda de informação caso o serviço de backend fique indisponível por alguns momentos, não trabalharemos com REST, trabalharemos com o Apache Kafka para o envio e recebimento de dados entre os sistemas.
+
+Não é responsabilidade do serviço de backend persistir os dados no Elasticsearch, utilizaremos o Kafka Connect que também consumirá os dados do simulador e fará a inserção no Elasticsearch.
+
+Trabalharemos com websockets (O backend receberá os dados do simulador, e enviará as posições para o frontend via websocket).
+
 ## Demo
 
 ![Gravação de tela de 18-05-2023 23_43_02](https://github.com/rafael-rodrigues-bento/imersao-full-cycle-code-delivery/assets/101301928/0a9128c4-deab-42f2-98a3-bd45a76bf5f4)
